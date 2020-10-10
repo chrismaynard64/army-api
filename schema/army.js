@@ -15,7 +15,8 @@ var WizardWeaponSchema   = new Schema({
 var ArmySchema   = new Schema({
     name: String,
     image: String,
-    units: [{ type: Schema.Types.ObjectId, ref: 'Unit' }]
+    units: [{ type: Schema.Types.ObjectId, ref: 'Unit' }],
+    weapons: [{ type: Schema.Types.ObjectId, ref: 'Weapon' }]
  //   units: [UnitSchema.schema]
 });
 

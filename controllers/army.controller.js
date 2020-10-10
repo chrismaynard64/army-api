@@ -17,12 +17,11 @@ exports.armies_get = function (req, res, next) {
             if (err) {
             return next(err);
         }
+        console.log(army);
         res.send(army)
     })
     
   // res.send(armies2);
-
-
 
 };
 
@@ -72,7 +71,7 @@ exports.army_delete = function (req, res) {
 };
 
 exports.army_get = function (req, res) {
-    Army.findById(req.params.id).populate('units').exec(function (err, army) {
+    Army.findById(req.params.id).populate('units').populate('weapons').exec(function (err, army) {
         if (err) return next(err);
         res.send(army);
     });

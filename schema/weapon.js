@@ -8,9 +8,11 @@ var WeaponSchema   = new Schema({
     type: String,  //melee, assault, heavy, rapidFire, grenade, pistol
     range: Number,  //0 = melee
     strength: Number,
+    strengthType: Number,   //1 - absolute, 2 - plus, 3 - multiply
     armourPenetration: Number,
     damage: Number,
-    attacks: Number
+    attacks: Number,
+    description: String
 
 
 

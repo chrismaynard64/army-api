@@ -20,9 +20,11 @@ exports.weapon_create = function (req, res, next) {
             type: req.body.type,
             range: req.body.range,
             strength: req.body.strength,
+            strengthType: req.body.strengthType,
             armourPenetration: req.body.armourPenetration,
             damage: req.body.damage,
-            attacks: req.body.attacks
+            attacks: req.body.attacks,
+            description: req.body.description
         }
     );
 
@@ -31,7 +33,7 @@ exports.weapon_create = function (req, res, next) {
         if (err) {
             return next(err);
         }
-        res.send('Weapon Created successfully')
+        res.send(weapon);
     });
 };
 
